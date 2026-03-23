@@ -1,0 +1,178 @@
+<resources>
+    <string name="app_name">Enclave</string>
+
+    <!-- Common -->
+    <string name="cancel">Annulla</string>
+    <string name="save">Salva</string>
+    <string name="confirm">Conferma</string>
+    <string name="back">Indietro</string>
+    <string name="delete">Elimina</string>
+    <string name="continue_btn">Continua</string>
+    <string name="next">Avanti</string>
+    <string name="update">Aggiorna</string>
+
+    <!-- Lock Screen -->
+    <string name="lock_subtitle">Il tuo vault è protetto</string>
+    <string name="lock_too_many_attempts">Troppi tentativi falliti</string>
+    <string name="lock_before_retry">prima di poter riprovare</string>
+    <string name="lock_wrong_last">Codice errato — ultimo tentativo!</string>
+    <string name="lock_wrong_attempts">Codice errato — ancora %d tentativi</string>
+    <string name="lock_unlock_button">Sblocca</string>
+    <string name="lock_fingerprint">Impronta digitale</string>
+    <string name="lock_use_pin">Usa PIN</string>
+    <string name="lock_use_password">Usa password</string>
+    <string name="lock_bio_subtitle">Autenticati per accedere al vault</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_tagline">Sicuro. Offline. Tuo.</string>
+    <string name="setup_choose_auth">Scegli il metodo di accesso</string>
+    <string name="setup_pin_type_subtitle">6 cifre numeriche</string>
+    <string name="setup_password_type_subtitle">Alfanumerica</string>
+    <string name="setup_set_pin">Imposta il tuo PIN</string>
+    <string name="setup_set_password">Imposta la tua password</string>
+    <string name="setup_pin_hint">Inserisci 6 cifre — non sarà mostrato né inviato a nessuno</string>
+    <string name="setup_password_hint">Minimo 8 caratteri, usa lettere e numeri</string>
+    <string name="setup_confirm_pin">Conferma il PIN</string>
+    <string name="setup_confirm_password">Conferma la password</string>
+    <string name="setup_pin_confirm_hint">Inserisci di nuovo le 6 cifre</string>
+    <string name="setup_password_confirm_hint">Riscrivi la stessa password per confermare</string>
+    <string name="setup_pin_mismatch">I PIN non coincidono, riprova</string>
+    <string name="setup_create_vault">Crea vault</string>
+    <string name="setup_password_min_length">La password deve essere almeno 8 caratteri</string>
+    <string name="setup_passwords_mismatch">Le password non coincidono</string>
+    <string name="setup_confirm_password_label">Conferma password</string>
+
+    <!-- Home Screen -->
+    <string name="home_search_hint">Cerca…</string>
+    <string name="home_add_title">Cosa vuoi aggiungere?</string>
+    <string name="home_no_results">Nessun risultato trovato</string>
+    <string name="home_empty_vault">Il vault è vuoto</string>
+    <string name="home_try_different_search">Prova con un termine diverso</string>
+    <string name="home_empty_vault_hint">Premi + per aggiungere la prima voce</string>
+    <string name="home_delete_title">Elimina voce</string>
+    <string name="home_delete_confirm">Eliminare \"%s\"? L\'operazione non è reversibile.</string>
+    <string name="home_lock_cd">Blocca</string>
+    <string name="home_settings_cd">Impostazioni</string>
+    <string name="home_add_cd">Aggiungi</string>
+    <string name="home_delete_cd">Elimina</string>
+    <string name="home_copy_cd">Copia</string>
+
+    <!-- Entry count -->
+    <plurals name="entries_count">
+        <item quantity="one">%d voce</item>
+        <item quantity="other">%d voci</item>
+    </plurals>
+
+    <!-- Entry Types -->
+    <string name="entry_type_account">Account</string>
+    <string name="entry_type_pin">PIN / Carta</string>
+    <string name="entry_type_note">Nota sicura</string>
+    <string name="entry_type_wifi">Wi-Fi</string>
+    <string name="entry_type_account_sub">Username e password</string>
+    <string name="entry_type_pin_sub">Codice PIN, carta di credito</string>
+    <string name="entry_type_note_sub">Testo riservato</string>
+    <string name="entry_type_wifi_sub">SSID e password di rete</string>
+
+    <!-- Add/Edit Screen -->
+    <string name="addedit_field_title">Titolo *</string>
+    <string name="addedit_title_required">Il titolo è obbligatorio</string>
+    <string name="addedit_category">Categoria</string>
+    <string name="addedit_username_email">Username / Email</string>
+    <string name="addedit_pin_code">Codice PIN</string>
+    <string name="addedit_cardholder">Intestatario / Info extra (opzionale)</string>
+    <string name="addedit_secure_note">Nota sicura</string>
+    <string name="addedit_wifi_ssid">Nome rete (SSID)</string>
+    <string name="addedit_wifi_password">Password Wi-Fi</string>
+    <string name="addedit_notes_optional">Note (opzionale)</string>
+    <string name="addedit_edit_title">Modifica %s</string>
+    <string name="addedit_new_title">Nuova %s</string>
+    <string name="addedit_entry_fallback">voce</string>
+    <string name="addedit_favorite_cd">Preferito</string>
+    <string name="addedit_gen_password_title">Genera password</string>
+    <string name="addedit_gen_length">Lunghezza: %d</string>
+    <string name="addedit_gen_uppercase">Maiuscole (A-Z)</string>
+    <string name="addedit_gen_digits">Cifre (0-9)</string>
+    <string name="addedit_gen_symbols">Simboli (!@#…)</string>
+    <string name="addedit_use_password">Usa questa password</string>
+    <string name="addedit_back_cd">Indietro</string>
+
+    <!-- Detail Screen -->
+    <string name="detail_updated_at">Aggiornato il %s</string>
+    <string name="detail_copied">%s copiato — verrà cancellato in 30 secondi</string>
+    <string name="detail_delete_title">Elimina account</string>
+    <string name="detail_delete_confirm">Eliminare \"%s\"? L\'operazione non è reversibile.</string>
+    <string name="detail_show_hide_cd">Mostra/nascondi</string>
+    <string name="detail_field_notes">Note</string>
+    <string name="detail_field_password">Password</string>
+    <string name="detail_copy_cd">Copia</string>
+    <string name="detail_edit_cd">Modifica</string>
+    <string name="detail_delete_cd">Elimina</string>
+    <string name="detail_back_cd">Indietro</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Impostazioni</string>
+    <string name="settings_back_cd">Indietro</string>
+    <string name="settings_security_section">Sicurezza</string>
+    <string name="settings_change_pin">Cambia PIN</string>
+    <string name="settings_change_password">Cambia password</string>
+    <string name="settings_change_auth_subtitle">Modifica il codice di accesso al vault</string>
+    <string name="settings_biometric">Impronta digitale</string>
+    <string name="settings_biometric_subtitle">Sblocca il vault con l\'impronta</string>
+    <string name="settings_autolock_section">Auto-blocco</string>
+    <string name="settings_autolock_subtitle">Blocca automaticamente il vault dopo inattività</string>
+    <string name="settings_backup_section">Backup</string>
+    <string name="settings_export_title">Esporta backup</string>
+    <string name="settings_export_subtitle">Salva un backup cifrato del vault</string>
+    <string name="settings_import_title">Importa backup</string>
+    <string name="settings_import_subtitle">Ripristina da un backup esistente</string>
+    <string name="settings_language_section">Lingua / Language</string>
+    <string name="settings_info_section">Informazioni</string>
+    <string name="settings_version">Versione</string>
+    <string name="settings_db_encryption">Cifratura DB</string>
+    <string name="settings_credentials_encryption">Cifratura credenziali</string>
+    <string name="settings_cloud_sync">Cloud sync</string>
+    <string name="settings_cloud_sync_value">Nessuno — 100% offline</string>
+    <string name="settings_change_auth_title">Cambia %s</string>
+    <string name="settings_field_current">Attuale</string>
+    <string name="settings_field_new">Nuovo</string>
+    <string name="settings_field_confirm">Conferma</string>
+    <string name="settings_codes_mismatch">I codici non coincidono</string>
+    <string name="settings_pin_min">PIN minimo 4 cifre</string>
+    <string name="settings_password_min">Password minima 6 caratteri</string>
+    <string name="settings_export_dialog_title">Passcode per backup</string>
+    <string name="settings_export_dialog_subtitle">Il backup sarà cifrato con il tuo passcode attuale</string>
+    <string name="settings_import_dialog_title">Passcode del backup</string>
+    <string name="settings_import_dialog_subtitle">Inserisci il passcode usato al momento dell\'esportazione</string>
+    <string name="settings_operation_success">Operazione completata con successo</string>
+    <string name="settings_operation_error">Errore: %s</string>
+    <string name="settings_field_pin">PIN</string>
+    <string name="settings_field_password">Password</string>
+    <string name="settings_change_pin_dialog_title">Cambia PIN</string>
+    <string name="settings_change_password_dialog_title">Cambia password</string>
+
+    <!-- Backup errors -->
+    <string name="backup_error_export">Errore durante l\'esportazione</string>
+    <string name="backup_error_import">Errore durante l\'importazione</string>
+    <string name="backup_error_invalid">Il file di backup non è valido</string>
+    <string name="backup_error_wrong_passcode">Passcode errato o file corrotto</string>
+
+    <!-- Root warning -->
+    <string name="lock_root_warning">⚠️ Device rootato rilevato — i tuoi dati potrebbero essere a rischio</string>
+
+    <!-- No Recovery / Reset Vault -->
+    <string name="setup_no_recovery_warning">Se dimentichi il PIN, il vault non potrà essere recuperato. Ricordalo bene o esporta un backup prima di perderlo.</string>
+    <string name="settings_danger_section">Zona pericolo</string>
+    <string name="settings_reset_vault_title">Azzera vault</string>
+    <string name="settings_reset_vault_subtitle">Elimina tutti i dati e ricomincia da zero</string>
+    <string name="settings_reset_dialog_title">Azzera vault?</string>
+    <string name="settings_reset_dialog_message">Tutti i dati salvati verranno eliminati definitivamente. Questa operazione è irreversibile.\n\nSe hai un backup esportato, potrai importarlo dopo il reset.</string>
+    <string name="settings_reset_dialog_confirm">Azzera tutto</string>
+
+    <!-- Timeout options -->
+    <string name="timeout_30s">30 secondi</string>
+    <string name="timeout_1m">1 minuto</string>
+    <string name="timeout_2m">2 minuti</string>
+    <string name="timeout_5m">5 minuti</string>
+    <string name="timeout_10m">10 minuti</string>
+    <string name="timeout_never">Mai</string>
+</resources>

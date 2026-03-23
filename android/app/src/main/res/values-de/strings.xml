@@ -1,0 +1,178 @@
+<resources>
+    <string name="app_name">Enclave</string>
+
+    <!-- Common -->
+    <string name="cancel">Abbrechen</string>
+    <string name="save">Speichern</string>
+    <string name="confirm">Bestätigen</string>
+    <string name="back">Zurück</string>
+    <string name="delete">Löschen</string>
+    <string name="continue_btn">Weiter</string>
+    <string name="next">Weiter</string>
+    <string name="update">Aktualisieren</string>
+
+    <!-- Lock Screen -->
+    <string name="lock_subtitle">Dein Tresor ist geschützt</string>
+    <string name="lock_too_many_attempts">Zu viele fehlgeschlagene Versuche</string>
+    <string name="lock_before_retry">bis zum nächsten Versuch</string>
+    <string name="lock_wrong_last">Falscher Code — letzter Versuch!</string>
+    <string name="lock_wrong_attempts">Falscher Code — noch %d Versuche</string>
+    <string name="lock_unlock_button">Entsperren</string>
+    <string name="lock_fingerprint">Fingerabdruck</string>
+    <string name="lock_use_pin">PIN verwenden</string>
+    <string name="lock_use_password">Passwort verwenden</string>
+    <string name="lock_bio_subtitle">Authentifiziere dich für den Tresor-Zugriff</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_tagline">Sicher. Offline. Deins.</string>
+    <string name="setup_choose_auth">Anmeldemethode wählen</string>
+    <string name="setup_pin_type_subtitle">6-stellige Zahl</string>
+    <string name="setup_password_type_subtitle">Alphanumerisch</string>
+    <string name="setup_set_pin">PIN festlegen</string>
+    <string name="setup_set_password">Passwort festlegen</string>
+    <string name="setup_pin_hint">Gib 6 Ziffern ein — wird nirgendwo gespeichert oder gesendet</string>
+    <string name="setup_password_hint">Mindestens 8 Zeichen, Buchstaben und Zahlen</string>
+    <string name="setup_confirm_pin">PIN bestätigen</string>
+    <string name="setup_confirm_password">Passwort bestätigen</string>
+    <string name="setup_pin_confirm_hint">Gib die 6 Ziffern erneut ein</string>
+    <string name="setup_password_confirm_hint">Schreib dasselbe Passwort zur Bestätigung</string>
+    <string name="setup_pin_mismatch">PINs stimmen nicht überein, erneut versuchen</string>
+    <string name="setup_create_vault">Tresor erstellen</string>
+    <string name="setup_password_min_length">Das Passwort muss mindestens 8 Zeichen haben</string>
+    <string name="setup_passwords_mismatch">Passwörter stimmen nicht überein</string>
+    <string name="setup_confirm_password_label">Passwort bestätigen</string>
+
+    <!-- Home Screen -->
+    <string name="home_search_hint">Suchen…</string>
+    <string name="home_add_title">Was möchtest du hinzufügen?</string>
+    <string name="home_no_results">Keine Ergebnisse gefunden</string>
+    <string name="home_empty_vault">Der Tresor ist leer</string>
+    <string name="home_try_different_search">Versuch einen anderen Begriff</string>
+    <string name="home_empty_vault_hint">Drücke + um den ersten Eintrag hinzuzufügen</string>
+    <string name="home_delete_title">Eintrag löschen</string>
+    <string name="home_delete_confirm">Löschen von \"%s\"? Diese Aktion kann nicht rückgängig gemacht werden.</string>
+    <string name="home_lock_cd">Sperren</string>
+    <string name="home_settings_cd">Einstellungen</string>
+    <string name="home_add_cd">Hinzufügen</string>
+    <string name="home_delete_cd">Löschen</string>
+    <string name="home_copy_cd">Kopieren</string>
+
+    <!-- Entry count -->
+    <plurals name="entries_count">
+        <item quantity="one">%d Eintrag</item>
+        <item quantity="other">%d Einträge</item>
+    </plurals>
+
+    <!-- Entry Types -->
+    <string name="entry_type_account">Konto</string>
+    <string name="entry_type_pin">PIN / Karte</string>
+    <string name="entry_type_note">Sichere Notiz</string>
+    <string name="entry_type_wifi">Wi-Fi</string>
+    <string name="entry_type_account_sub">Benutzername und Passwort</string>
+    <string name="entry_type_pin_sub">PIN-Code, Kreditkarte</string>
+    <string name="entry_type_note_sub">Privater Text</string>
+    <string name="entry_type_wifi_sub">SSID und Netzwerkpasswort</string>
+
+    <!-- Add/Edit Screen -->
+    <string name="addedit_field_title">Titel *</string>
+    <string name="addedit_title_required">Titel ist erforderlich</string>
+    <string name="addedit_category">Kategorie</string>
+    <string name="addedit_username_email">Benutzername / E-Mail</string>
+    <string name="addedit_pin_code">PIN-Code</string>
+    <string name="addedit_cardholder">Karteninhaber / Zusatzinfo (optional)</string>
+    <string name="addedit_secure_note">Sichere Notiz</string>
+    <string name="addedit_wifi_ssid">Netzwerkname (SSID)</string>
+    <string name="addedit_wifi_password">WLAN-Passwort</string>
+    <string name="addedit_notes_optional">Notizen (optional)</string>
+    <string name="addedit_edit_title">%s bearbeiten</string>
+    <string name="addedit_new_title">Neues %s</string>
+    <string name="addedit_entry_fallback">Eintrag</string>
+    <string name="addedit_favorite_cd">Favorit</string>
+    <string name="addedit_gen_password_title">Passwort generieren</string>
+    <string name="addedit_gen_length">Länge: %d</string>
+    <string name="addedit_gen_uppercase">Großbuchstaben (A-Z)</string>
+    <string name="addedit_gen_digits">Ziffern (0-9)</string>
+    <string name="addedit_gen_symbols">Symbole (!@#…)</string>
+    <string name="addedit_use_password">Dieses Passwort verwenden</string>
+    <string name="addedit_back_cd">Zurück</string>
+
+    <!-- Detail Screen -->
+    <string name="detail_updated_at">Aktualisiert am %s</string>
+    <string name="detail_copied">%s kopiert — wird in 30 Sekunden gelöscht</string>
+    <string name="detail_delete_title">Konto löschen</string>
+    <string name="detail_delete_confirm">Löschen von \"%s\"? Diese Aktion kann nicht rückgängig gemacht werden.</string>
+    <string name="detail_show_hide_cd">Anzeigen/Verbergen</string>
+    <string name="detail_field_notes">Notizen</string>
+    <string name="detail_field_password">Passwort</string>
+    <string name="detail_copy_cd">Kopieren</string>
+    <string name="detail_edit_cd">Bearbeiten</string>
+    <string name="detail_delete_cd">Löschen</string>
+    <string name="detail_back_cd">Zurück</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_back_cd">Zurück</string>
+    <string name="settings_security_section">Sicherheit</string>
+    <string name="settings_change_pin">PIN ändern</string>
+    <string name="settings_change_password">Passwort ändern</string>
+    <string name="settings_change_auth_subtitle">Zugangscode für den Tresor ändern</string>
+    <string name="settings_biometric">Fingerabdruck</string>
+    <string name="settings_biometric_subtitle">Tresor mit Fingerabdruck entsperren</string>
+    <string name="settings_autolock_section">Automatische Sperre</string>
+    <string name="settings_autolock_subtitle">Tresor nach Inaktivität automatisch sperren</string>
+    <string name="settings_backup_section">Sicherung</string>
+    <string name="settings_export_title">Sicherung exportieren</string>
+    <string name="settings_export_subtitle">Verschlüsseltes Backup des Tresors speichern</string>
+    <string name="settings_import_title">Sicherung importieren</string>
+    <string name="settings_import_subtitle">Aus einem vorhandenen Backup wiederherstellen</string>
+    <string name="settings_language_section">Sprache / Language</string>
+    <string name="settings_info_section">Informationen</string>
+    <string name="settings_version">Version</string>
+    <string name="settings_db_encryption">DB-Verschlüsselung</string>
+    <string name="settings_credentials_encryption">Anmeldedaten-Verschlüsselung</string>
+    <string name="settings_cloud_sync">Cloud-Synchronisation</string>
+    <string name="settings_cloud_sync_value">Keine — 100% offline</string>
+    <string name="settings_change_auth_title">%s ändern</string>
+    <string name="settings_field_current">Aktuell</string>
+    <string name="settings_field_new">Neu</string>
+    <string name="settings_field_confirm">Bestätigen</string>
+    <string name="settings_codes_mismatch">Codes stimmen nicht überein</string>
+    <string name="settings_pin_min">PIN muss mindestens 4 Ziffern haben</string>
+    <string name="settings_password_min">Passwort muss mindestens 6 Zeichen haben</string>
+    <string name="settings_export_dialog_title">Passcode für Sicherung</string>
+    <string name="settings_export_dialog_subtitle">Die Sicherung wird mit deinem aktuellen Passcode verschlüsselt</string>
+    <string name="settings_import_dialog_title">Backup-Passcode</string>
+    <string name="settings_import_dialog_subtitle">Gib den bei der Exportierung verwendeten Passcode ein</string>
+    <string name="settings_operation_success">Vorgang erfolgreich abgeschlossen</string>
+    <string name="settings_operation_error">Fehler: %s</string>
+    <string name="settings_field_pin">PIN</string>
+    <string name="settings_field_password">Passwort</string>
+    <string name="settings_change_pin_dialog_title">PIN ändern</string>
+    <string name="settings_change_password_dialog_title">Passwort ändern</string>
+
+    <!-- Backup errors -->
+    <string name="backup_error_export">Fehler beim Exportieren</string>
+    <string name="backup_error_import">Fehler beim Importieren</string>
+    <string name="backup_error_invalid">Ungültige Sicherungsdatei</string>
+    <string name="backup_error_wrong_passcode">Falscher Passcode oder beschädigte Datei</string>
+
+    <!-- Root warning -->
+    <string name="lock_root_warning">⚠️ Gerootetes Gerät erkannt — deine Daten könnten gefährdet sein</string>
+
+    <!-- No Recovery / Reset Vault -->
+    <string name="setup_no_recovery_warning">Wenn du deinen PIN vergisst, kann der Tresor nicht wiederhergestellt werden. Merke ihn dir gut oder exportiere ein Backup.</string>
+    <string name="settings_danger_section">Gefahrenzone</string>
+    <string name="settings_reset_vault_title">Tresor zurücksetzen</string>
+    <string name="settings_reset_vault_subtitle">Alle Daten löschen und neu beginnen</string>
+    <string name="settings_reset_dialog_title">Tresor zurücksetzen?</string>
+    <string name="settings_reset_dialog_message">Alle gespeicherten Daten werden unwiderruflich gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.\n\nWenn du ein exportiertes Backup hast, kannst du es nach dem Reset importieren.</string>
+    <string name="settings_reset_dialog_confirm">Alles zurücksetzen</string>
+
+    <!-- Timeout options -->
+    <string name="timeout_30s">30 Sekunden</string>
+    <string name="timeout_1m">1 Minute</string>
+    <string name="timeout_2m">2 Minuten</string>
+    <string name="timeout_5m">5 Minuten</string>
+    <string name="timeout_10m">10 Minuten</string>
+    <string name="timeout_never">Nie</string>
+</resources>

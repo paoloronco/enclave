@@ -1,0 +1,178 @@
+<resources>
+    <string name="app_name">Enclave</string>
+
+    <!-- Common -->
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="confirm">Confirm</string>
+    <string name="back">Back</string>
+    <string name="delete">Delete</string>
+    <string name="continue_btn">Continue</string>
+    <string name="next">Next</string>
+    <string name="update">Update</string>
+
+    <!-- Lock Screen -->
+    <string name="lock_subtitle">Your vault is protected</string>
+    <string name="lock_too_many_attempts">Too many failed attempts</string>
+    <string name="lock_before_retry">before you can try again</string>
+    <string name="lock_wrong_last">Wrong code — last attempt!</string>
+    <string name="lock_wrong_attempts">Wrong code — %d attempts left</string>
+    <string name="lock_unlock_button">Unlock</string>
+    <string name="lock_fingerprint">Fingerprint</string>
+    <string name="lock_use_pin">Use PIN</string>
+    <string name="lock_use_password">Use password</string>
+    <string name="lock_bio_subtitle">Authenticate to access the vault</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_tagline">Secure. Offline. Yours.</string>
+    <string name="setup_choose_auth">Choose authentication method</string>
+    <string name="setup_pin_type_subtitle">6 numeric digits</string>
+    <string name="setup_password_type_subtitle">Alphanumeric</string>
+    <string name="setup_set_pin">Set your PIN</string>
+    <string name="setup_set_password">Set your password</string>
+    <string name="setup_pin_hint">Enter 6 digits — never shown or sent anywhere</string>
+    <string name="setup_password_hint">Minimum 8 characters, use letters and numbers</string>
+    <string name="setup_confirm_pin">Confirm PIN</string>
+    <string name="setup_confirm_password">Confirm password</string>
+    <string name="setup_pin_confirm_hint">Enter the 6 digits again</string>
+    <string name="setup_password_confirm_hint">Type the same password to confirm</string>
+    <string name="setup_pin_mismatch">PINs don\'t match, try again</string>
+    <string name="setup_create_vault">Create vault</string>
+    <string name="setup_password_min_length">Password must be at least 8 characters</string>
+    <string name="setup_passwords_mismatch">Passwords don\'t match</string>
+    <string name="setup_confirm_password_label">Confirm password</string>
+
+    <!-- Home Screen -->
+    <string name="home_search_hint">Search…</string>
+    <string name="home_add_title">What do you want to add?</string>
+    <string name="home_no_results">No results found</string>
+    <string name="home_empty_vault">The vault is empty</string>
+    <string name="home_try_different_search">Try a different term</string>
+    <string name="home_empty_vault_hint">Press + to add the first entry</string>
+    <string name="home_delete_title">Delete entry</string>
+    <string name="home_delete_confirm">Delete \"%s\"? This action cannot be undone.</string>
+    <string name="home_lock_cd">Lock</string>
+    <string name="home_settings_cd">Settings</string>
+    <string name="home_add_cd">Add</string>
+    <string name="home_delete_cd">Delete</string>
+    <string name="home_copy_cd">Copy</string>
+
+    <!-- Entry count -->
+    <plurals name="entries_count">
+        <item quantity="one">%d entry</item>
+        <item quantity="other">%d entries</item>
+    </plurals>
+
+    <!-- Entry Types -->
+    <string name="entry_type_account">Account</string>
+    <string name="entry_type_pin">PIN / Card</string>
+    <string name="entry_type_note">Secure Note</string>
+    <string name="entry_type_wifi">Wi-Fi</string>
+    <string name="entry_type_account_sub">Username and password</string>
+    <string name="entry_type_pin_sub">PIN code, credit card</string>
+    <string name="entry_type_note_sub">Private text</string>
+    <string name="entry_type_wifi_sub">SSID and network password</string>
+
+    <!-- Add/Edit Screen -->
+    <string name="addedit_field_title">Title *</string>
+    <string name="addedit_title_required">Title is required</string>
+    <string name="addedit_category">Category</string>
+    <string name="addedit_username_email">Username / Email</string>
+    <string name="addedit_pin_code">PIN Code</string>
+    <string name="addedit_cardholder">Cardholder / Extra info (optional)</string>
+    <string name="addedit_secure_note">Secure Note</string>
+    <string name="addedit_wifi_ssid">Network name (SSID)</string>
+    <string name="addedit_wifi_password">Wi-Fi Password</string>
+    <string name="addedit_notes_optional">Notes (optional)</string>
+    <string name="addedit_edit_title">Edit %s</string>
+    <string name="addedit_new_title">New %s</string>
+    <string name="addedit_entry_fallback">entry</string>
+    <string name="addedit_favorite_cd">Favorite</string>
+    <string name="addedit_gen_password_title">Generate password</string>
+    <string name="addedit_gen_length">Length: %d</string>
+    <string name="addedit_gen_uppercase">Uppercase (A-Z)</string>
+    <string name="addedit_gen_digits">Digits (0-9)</string>
+    <string name="addedit_gen_symbols">Symbols (!@#…)</string>
+    <string name="addedit_use_password">Use this password</string>
+    <string name="addedit_back_cd">Back</string>
+
+    <!-- Detail Screen -->
+    <string name="detail_updated_at">Updated on %s</string>
+    <string name="detail_copied">%s copied — will be cleared in 30 seconds</string>
+    <string name="detail_delete_title">Delete account</string>
+    <string name="detail_delete_confirm">Delete \"%s\"? This action cannot be undone.</string>
+    <string name="detail_show_hide_cd">Show/hide</string>
+    <string name="detail_field_notes">Notes</string>
+    <string name="detail_field_password">Password</string>
+    <string name="detail_copy_cd">Copy</string>
+    <string name="detail_edit_cd">Edit</string>
+    <string name="detail_delete_cd">Delete</string>
+    <string name="detail_back_cd">Back</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_back_cd">Back</string>
+    <string name="settings_security_section">Security</string>
+    <string name="settings_change_pin">Change PIN</string>
+    <string name="settings_change_password">Change password</string>
+    <string name="settings_change_auth_subtitle">Modify vault access code</string>
+    <string name="settings_biometric">Fingerprint</string>
+    <string name="settings_biometric_subtitle">Unlock the vault with your fingerprint</string>
+    <string name="settings_autolock_section">Auto-lock</string>
+    <string name="settings_autolock_subtitle">Automatically lock the vault after inactivity</string>
+    <string name="settings_backup_section">Backup</string>
+    <string name="settings_export_title">Export backup</string>
+    <string name="settings_export_subtitle">Save an encrypted backup of the vault</string>
+    <string name="settings_import_title">Import backup</string>
+    <string name="settings_import_subtitle">Restore from an existing backup</string>
+    <string name="settings_language_section">Language / Lingua</string>
+    <string name="settings_info_section">Information</string>
+    <string name="settings_version">Version</string>
+    <string name="settings_db_encryption">DB encryption</string>
+    <string name="settings_credentials_encryption">Credentials encryption</string>
+    <string name="settings_cloud_sync">Cloud sync</string>
+    <string name="settings_cloud_sync_value">None — 100% offline</string>
+    <string name="settings_change_auth_title">Change %s</string>
+    <string name="settings_field_current">Current</string>
+    <string name="settings_field_new">New</string>
+    <string name="settings_field_confirm">Confirm</string>
+    <string name="settings_codes_mismatch">Codes don\'t match</string>
+    <string name="settings_pin_min">PIN must be at least 4 digits</string>
+    <string name="settings_password_min">Password must be at least 6 characters</string>
+    <string name="settings_export_dialog_title">Backup passcode</string>
+    <string name="settings_export_dialog_subtitle">The backup will be encrypted with your current passcode</string>
+    <string name="settings_import_dialog_title">Backup passcode</string>
+    <string name="settings_import_dialog_subtitle">Enter the passcode used when exporting</string>
+    <string name="settings_operation_success">Operation completed successfully</string>
+    <string name="settings_operation_error">Error: %s</string>
+    <string name="settings_field_pin">PIN</string>
+    <string name="settings_field_password">Password</string>
+    <string name="settings_change_pin_dialog_title">Change PIN</string>
+    <string name="settings_change_password_dialog_title">Change password</string>
+
+    <!-- Backup errors -->
+    <string name="backup_error_export">Error during export</string>
+    <string name="backup_error_import">Error during import</string>
+    <string name="backup_error_invalid">Invalid backup file</string>
+    <string name="backup_error_wrong_passcode">Wrong passcode or corrupted file</string>
+
+    <!-- Root warning -->
+    <string name="lock_root_warning">⚠️ Rooted device detected — your data may be at risk</string>
+
+    <!-- No Recovery / Reset Vault -->
+    <string name="setup_no_recovery_warning">If you forget your PIN, the vault cannot be recovered. Remember it well or export a backup before losing it.</string>
+    <string name="settings_danger_section">Danger zone</string>
+    <string name="settings_reset_vault_title">Reset vault</string>
+    <string name="settings_reset_vault_subtitle">Delete all data and start over</string>
+    <string name="settings_reset_dialog_title">Reset vault?</string>
+    <string name="settings_reset_dialog_message">All saved data will be permanently deleted. This action cannot be undone.\n\nIf you have an exported backup, you can import it after the reset.</string>
+    <string name="settings_reset_dialog_confirm">Reset everything</string>
+
+    <!-- Timeout options -->
+    <string name="timeout_30s">30 seconds</string>
+    <string name="timeout_1m">1 minute</string>
+    <string name="timeout_2m">2 minutes</string>
+    <string name="timeout_5m">5 minutes</string>
+    <string name="timeout_10m">10 minutes</string>
+    <string name="timeout_never">Never</string>
+</resources>

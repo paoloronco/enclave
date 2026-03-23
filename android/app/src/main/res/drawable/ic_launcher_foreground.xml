@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Teal circle — main shape, bold and cohesive -->
+    <path
+        android:fillColor="#00BFA5"
+        android:pathData="M54,54 m-34,0 a34,34 0 1 0 68,0 a34,34 0 1 0 -68,0"/>
+
+    <!-- Subtle inner ring for depth -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#22FFFFFF"
+        android:strokeWidth="2.5"
+        android:pathData="M54,54 m-28,0 a28,28 0 1 0 56,0 a28,28 0 1 0 -56,0"/>
+
+    <!-- Lock shackle — white, bold rounded stroke -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="7"
+        android:strokeLineCap="round"
+        android:pathData="M40,56 L40,43 Q40,27 54,27 Q68,27 68,43 L68,56"/>
+
+    <!-- Lock body — white filled rounded rect -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M33,53 Q33,51 35,51 L73,51 Q75,51 75,53 L75,80 Q75,84 71,84 L37,84 Q33,84 33,80 Z"/>
+
+    <!-- Keyhole circle — navy -->
+    <path
+        android:fillColor="#07101F"
+        android:pathData="M54,64 m-6.5,0 a6.5,6.5 0 1 0 13,0 a6.5,6.5 0 1 0 -13,0"/>
+
+    <!-- Keyhole slot — navy -->
+    <path
+        android:fillColor="#07101F"
+        android:pathData="M51,69 L57,69 L55.5,78 L52.5,78 Z"/>
+
+</vector>

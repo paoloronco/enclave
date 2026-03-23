@@ -1,0 +1,39 @@
+# ============================================================
+#  Android / Gradle
+# ============================================================
+*.iml
+.gradle/
+local.properties
+.idea/
+.DS_Store
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Build outputs (matches android/build/, android/app/build/, etc.)
+*.apk
+*.aab
+*.aar
+
+# Signing
+*.jks
+*.keystore
+*.p12
+keystore.properties
+release-signing.properties
+
+# Sensitive config
+google-services.json
+google-services-debug.json
+fabric.properties
+crashlytics.properties
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# IDE
+*.swp
+*.swo
+*~

@@ -1,0 +1,178 @@
+<resources>
+    <string name="app_name">Enclave</string>
+
+    <!-- Common -->
+    <string name="cancel">Cancelar</string>
+    <string name="save">Guardar</string>
+    <string name="confirm">Confirmar</string>
+    <string name="back">Atrás</string>
+    <string name="delete">Eliminar</string>
+    <string name="continue_btn">Continuar</string>
+    <string name="next">Siguiente</string>
+    <string name="update">Actualizar</string>
+
+    <!-- Lock Screen -->
+    <string name="lock_subtitle">Tu cofre está protegido</string>
+    <string name="lock_too_many_attempts">Demasiados intentos fallidos</string>
+    <string name="lock_before_retry">antes de poder intentar de nuevo</string>
+    <string name="lock_wrong_last">Código incorrecto — ¡último intento!</string>
+    <string name="lock_wrong_attempts">Código incorrecto — %d intentos restantes</string>
+    <string name="lock_unlock_button">Desbloquear</string>
+    <string name="lock_fingerprint">Huella dactilar</string>
+    <string name="lock_use_pin">Usar PIN</string>
+    <string name="lock_use_password">Usar contraseña</string>
+    <string name="lock_bio_subtitle">Autentícate para acceder al cofre</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_tagline">Seguro. Offline. Tuyo.</string>
+    <string name="setup_choose_auth">Elige el método de acceso</string>
+    <string name="setup_pin_type_subtitle">6 dígitos numéricos</string>
+    <string name="setup_password_type_subtitle">Alfanumérica</string>
+    <string name="setup_set_pin">Establece tu PIN</string>
+    <string name="setup_set_password">Establece tu contraseña</string>
+    <string name="setup_pin_hint">Introduce 6 dígitos — no se mostrará ni enviará a nadie</string>
+    <string name="setup_password_hint">Mínimo 8 caracteres, usa letras y números</string>
+    <string name="setup_confirm_pin">Confirmar PIN</string>
+    <string name="setup_confirm_password">Confirmar contraseña</string>
+    <string name="setup_pin_confirm_hint">Introduce los 6 dígitos de nuevo</string>
+    <string name="setup_password_confirm_hint">Escribe la misma contraseña para confirmar</string>
+    <string name="setup_pin_mismatch">Los PIN no coinciden, inténtalo de nuevo</string>
+    <string name="setup_create_vault">Crear cofre</string>
+    <string name="setup_password_min_length">La contraseña debe tener al menos 8 caracteres</string>
+    <string name="setup_passwords_mismatch">Las contraseñas no coinciden</string>
+    <string name="setup_confirm_password_label">Confirmar contraseña</string>
+
+    <!-- Home Screen -->
+    <string name="home_search_hint">Buscar…</string>
+    <string name="home_add_title">¿Qué quieres añadir?</string>
+    <string name="home_no_results">No se encontraron resultados</string>
+    <string name="home_empty_vault">El cofre está vacío</string>
+    <string name="home_try_different_search">Prueba con un término diferente</string>
+    <string name="home_empty_vault_hint">Pulsa + para añadir la primera entrada</string>
+    <string name="home_delete_title">Eliminar entrada</string>
+    <string name="home_delete_confirm">¿Eliminar \"%s\"? Esta acción no se puede deshacer.</string>
+    <string name="home_lock_cd">Bloquear</string>
+    <string name="home_settings_cd">Ajustes</string>
+    <string name="home_add_cd">Añadir</string>
+    <string name="home_delete_cd">Eliminar</string>
+    <string name="home_copy_cd">Copiar</string>
+
+    <!-- Entry count -->
+    <plurals name="entries_count">
+        <item quantity="one">%d entrada</item>
+        <item quantity="other">%d entradas</item>
+    </plurals>
+
+    <!-- Entry Types -->
+    <string name="entry_type_account">Cuenta</string>
+    <string name="entry_type_pin">PIN / Tarjeta</string>
+    <string name="entry_type_note">Nota segura</string>
+    <string name="entry_type_wifi">Wi-Fi</string>
+    <string name="entry_type_account_sub">Usuario y contraseña</string>
+    <string name="entry_type_pin_sub">Código PIN, tarjeta de crédito</string>
+    <string name="entry_type_note_sub">Texto privado</string>
+    <string name="entry_type_wifi_sub">SSID y contraseña de red</string>
+
+    <!-- Add/Edit Screen -->
+    <string name="addedit_field_title">Título *</string>
+    <string name="addedit_title_required">El título es obligatorio</string>
+    <string name="addedit_category">Categoría</string>
+    <string name="addedit_username_email">Usuario / Correo</string>
+    <string name="addedit_pin_code">Código PIN</string>
+    <string name="addedit_cardholder">Titular / Info extra (opcional)</string>
+    <string name="addedit_secure_note">Nota segura</string>
+    <string name="addedit_wifi_ssid">Nombre de red (SSID)</string>
+    <string name="addedit_wifi_password">Contraseña Wi-Fi</string>
+    <string name="addedit_notes_optional">Notas (opcional)</string>
+    <string name="addedit_edit_title">Editar %s</string>
+    <string name="addedit_new_title">Nueva %s</string>
+    <string name="addedit_entry_fallback">entrada</string>
+    <string name="addedit_favorite_cd">Favorito</string>
+    <string name="addedit_gen_password_title">Generar contraseña</string>
+    <string name="addedit_gen_length">Longitud: %d</string>
+    <string name="addedit_gen_uppercase">Mayúsculas (A-Z)</string>
+    <string name="addedit_gen_digits">Dígitos (0-9)</string>
+    <string name="addedit_gen_symbols">Símbolos (!@#…)</string>
+    <string name="addedit_use_password">Usar esta contraseña</string>
+    <string name="addedit_back_cd">Atrás</string>
+
+    <!-- Detail Screen -->
+    <string name="detail_updated_at">Actualizado el %s</string>
+    <string name="detail_copied">%s copiado — se borrará en 30 segundos</string>
+    <string name="detail_delete_title">Eliminar cuenta</string>
+    <string name="detail_delete_confirm">¿Eliminar \"%s\"? Esta acción no se puede deshacer.</string>
+    <string name="detail_show_hide_cd">Mostrar/ocultar</string>
+    <string name="detail_field_notes">Notas</string>
+    <string name="detail_field_password">Contraseña</string>
+    <string name="detail_copy_cd">Copiar</string>
+    <string name="detail_edit_cd">Editar</string>
+    <string name="detail_delete_cd">Eliminar</string>
+    <string name="detail_back_cd">Atrás</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_back_cd">Atrás</string>
+    <string name="settings_security_section">Seguridad</string>
+    <string name="settings_change_pin">Cambiar PIN</string>
+    <string name="settings_change_password">Cambiar contraseña</string>
+    <string name="settings_change_auth_subtitle">Cambiar el código de acceso al cofre</string>
+    <string name="settings_biometric">Huella dactilar</string>
+    <string name="settings_biometric_subtitle">Desbloquear el cofre con la huella</string>
+    <string name="settings_autolock_section">Bloqueo automático</string>
+    <string name="settings_autolock_subtitle">Bloquear el cofre automáticamente tras inactividad</string>
+    <string name="settings_backup_section">Copia de seguridad</string>
+    <string name="settings_export_title">Exportar copia de seguridad</string>
+    <string name="settings_export_subtitle">Guardar una copia cifrada del cofre</string>
+    <string name="settings_import_title">Importar copia de seguridad</string>
+    <string name="settings_import_subtitle">Restaurar desde una copia existente</string>
+    <string name="settings_language_section">Idioma / Language</string>
+    <string name="settings_info_section">Información</string>
+    <string name="settings_version">Versión</string>
+    <string name="settings_db_encryption">Cifrado BD</string>
+    <string name="settings_credentials_encryption">Cifrado de credenciales</string>
+    <string name="settings_cloud_sync">Sincronización en la nube</string>
+    <string name="settings_cloud_sync_value">Ninguna — 100% offline</string>
+    <string name="settings_change_auth_title">Cambiar %s</string>
+    <string name="settings_field_current">Actual</string>
+    <string name="settings_field_new">Nuevo</string>
+    <string name="settings_field_confirm">Confirmar</string>
+    <string name="settings_codes_mismatch">Los códigos no coinciden</string>
+    <string name="settings_pin_min">PIN mínimo 4 dígitos</string>
+    <string name="settings_password_min">Contraseña mínimo 6 caracteres</string>
+    <string name="settings_export_dialog_title">Contraseña para copia de seguridad</string>
+    <string name="settings_export_dialog_subtitle">La copia será cifrada con tu contraseña actual</string>
+    <string name="settings_import_dialog_title">Contraseña de la copia de seguridad</string>
+    <string name="settings_import_dialog_subtitle">Introduce la contraseña usada al exportar</string>
+    <string name="settings_operation_success">Operación completada con éxito</string>
+    <string name="settings_operation_error">Error: %s</string>
+    <string name="settings_field_pin">PIN</string>
+    <string name="settings_field_password">Contraseña</string>
+    <string name="settings_change_pin_dialog_title">Cambiar PIN</string>
+    <string name="settings_change_password_dialog_title">Cambiar contraseña</string>
+
+    <!-- Backup errors -->
+    <string name="backup_error_export">Error durante la exportación</string>
+    <string name="backup_error_import">Error durante la importación</string>
+    <string name="backup_error_invalid">Archivo de copia de seguridad no válido</string>
+    <string name="backup_error_wrong_passcode">Contraseña incorrecta o archivo corrupto</string>
+
+    <!-- Root warning -->
+    <string name="lock_root_warning">⚠️ Dispositivo rooteado detectado — tus datos podrían estar en riesgo</string>
+
+    <!-- No Recovery / Reset Vault -->
+    <string name="setup_no_recovery_warning">Si olvidas tu PIN, el cofre no se puede recuperar. Recuérdalo bien o exporta una copia de seguridad.</string>
+    <string name="settings_danger_section">Zona de peligro</string>
+    <string name="settings_reset_vault_title">Restablecer cofre</string>
+    <string name="settings_reset_vault_subtitle">Eliminar todos los datos y empezar de nuevo</string>
+    <string name="settings_reset_dialog_title">¿Restablecer cofre?</string>
+    <string name="settings_reset_dialog_message">Todos los datos guardados se eliminarán de forma permanente. Esta acción no se puede deshacer.\n\nSi tienes una copia de seguridad exportada, podrás importarla tras el restablecimiento.</string>
+    <string name="settings_reset_dialog_confirm">Restablecer todo</string>
+
+    <!-- Timeout options -->
+    <string name="timeout_30s">30 segundos</string>
+    <string name="timeout_1m">1 minuto</string>
+    <string name="timeout_2m">2 minutos</string>
+    <string name="timeout_5m">5 minutos</string>
+    <string name="timeout_10m">10 minutos</string>
+    <string name="timeout_never">Nunca</string>
+</resources>

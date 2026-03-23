@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="108" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0F1C2E"/>
+      <stop offset="1" stop-color="#07101F"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="54" cy="54" r="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00BFA5" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#00BFA5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="108" height="108" fill="url(#bg)"/>
+  <rect width="108" height="108" fill="url(#glow)"/>
+
+  <!-- Teal circle -->
+  <circle cx="54" cy="54" r="34" fill="#00BFA5"/>
+
+  <!-- Inner ring accent -->
+  <circle cx="54" cy="54" r="28" fill="none" stroke="white" stroke-width="2.5" stroke-opacity="0.13"/>
+
+  <!-- Lock shackle -->
+  <path d="M40,56 L40,43 Q40,27 54,27 Q68,27 68,43 L68,56"
+        fill="none" stroke="white" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Lock body -->
+  <path d="M33,53 Q33,51 35,51 L73,51 Q75,51 75,53 L75,80 Q75,84 71,84 L37,84 Q33,84 33,80 Z"
+        fill="white"/>
+
+  <!-- Keyhole circle -->
+  <circle cx="54" cy="64" r="6.5" fill="#07101F"/>
+
+  <!-- Keyhole slot -->
+  <path d="M51,69 L57,69 L55.5,78 L52.5,78 Z" fill="#07101F"/>
+</svg>
