@@ -25,7 +25,7 @@ A fully offline, secure password and secrets manager for Android. No cloud, no s
 - **Lock on background** — vault locks immediately when the app is sent to background
 - **Brute-force protection** — 5 wrong attempts trigger a 30-second lockout with visual countdown
 - **Secure clipboard** — copied passwords are marked `IS_SENSITIVE` and auto-cleared after 30 seconds
-- **Screenshot prevention** — `FLAG_SECURE` blocks screenshots and app-switcher previews (re-enable before release)
+- **Screenshot prevention** — `FLAG_SECURE` blocks screenshots and app-switcher previews
 
 ### Vault Entry Types
 | Type | Fields |
@@ -91,14 +91,14 @@ app/src/main/java/com/paoloronco/codevault/
 ```
 
 **Stack:**
-- Kotlin 2.0.21
+- Kotlin 2.2.10
 - Jetpack Compose + Material 3
-- Room 2.6.1 (plain SQLite, field-level encryption via Keystore)
+- Room 2.8.4 (plain SQLite, field-level encryption via Keystore)
 - Navigation Compose 2.8.5
 - AndroidX Biometric 1.1.0
 - AndroidX Security Crypto 1.1.0 (EncryptedSharedPreferences)
 - Android Keystore (AES-256-GCM, hardware-backed on supported devices)
-- KSP 2.0.21-1.0.27
+- KSP 2.3.2
 
 ---
 
@@ -111,7 +111,7 @@ app/src/main/java/com/paoloronco/codevault/
 | App preferences | EncryptedSharedPreferences (AES-256-GCM / AES-256-SIV) |
 | Backup file | AES-256-GCM + PBKDF2 passcode derivation, random 16-byte salt + 12-byte IV |
 | Clipboard | `IS_SENSITIVE` flag + auto-clear after 30 s |
-| Screen capture | `FLAG_SECURE` (enable in production) |
+| Screen capture | `FLAG_SECURE` enabled |
 | Cloud backup | Disabled (`allowBackup="false"`, custom `backup_rules.xml`) |
 
 The database file is stored at:
@@ -127,7 +127,7 @@ This path is sandboxed by Android and inaccessible to other apps or the user wit
 | | |
 |---|---|
 | Min SDK | Android 9 (API 28) |
-| Target SDK | Android 15 (API 35) |
+| Target SDK | Android 16 (API 36) |
 | Permissions | `USE_BIOMETRIC` |
 
 ---
@@ -146,7 +146,7 @@ cd android
 
 Open `android/` in Android Studio Hedgehog or newer, sync Gradle, then **Run**.
 
-> **Before releasing:** uncomment `FLAG_SECURE` in `MainActivity.kt` to re-enable screenshot prevention.
+> `FLAG_SECURE` is enabled in `MainActivity.kt` to prevent screenshots and app-switcher previews.
 
 ---
 

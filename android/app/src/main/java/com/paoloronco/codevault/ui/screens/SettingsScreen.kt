@@ -25,6 +25,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import com.paoloronco.codevault.BuildConfig
 import com.paoloronco.codevault.R
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -240,7 +241,7 @@ fun SettingsScreen(
                 colors   = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
             ) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                    InfoRow(stringResource(R.string.settings_version), "1.0.0")
+                    InfoRow(stringResource(R.string.settings_version), BuildConfig.VERSION_NAME)
                     InfoRow(stringResource(R.string.settings_db_encryption), "AES-256-GCM (Android Keystore)")
                     InfoRow(stringResource(R.string.settings_credentials_encryption), "AES-256-GCM (Android Keystore)")
                     InfoRow(stringResource(R.string.settings_backup_section), "AES-256-GCM + PBKDF2")

@@ -1,0 +1,84 @@
+ENCLAVE — PLAY STORE LISTING
+=============================
+
+
+RELEASE NOTES — v1.0
+─────────────────────────────────
+This is the first release of Enclave.
+
+Your passwords, stored locally. Encrypted. Always offline.
+
+• AES-256-GCM encryption for every entry, backed by Android Keystore
+• Fingerprint, face, and PIN unlock
+• Categories, search, and auto-lock
+• Encrypted backup and restore
+• No account. No cloud. No tracking.
+
+
+
+
+SHORT DESCRIPTION (max 80 chars)
+─────────────────────────────────
+Your passwords. On your device. Nowhere else.
+
+
+FULL DESCRIPTION
+─────────────────────────────────
+Your passwords belong to you — not to a server, not to a company, not to the cloud.
+
+Enclave is a password manager that works entirely on your device. No account.
+No internet connection. No subscription. Just a clean, fast vault that opens
+with your fingerprint and keeps your data exactly where it should be: with you.
+
+
+── WHY ENCLAVE ──────────────────────────────
+
+Most password managers sync your data to remote servers. That means your
+passwords travel across networks, sit in databases, and depend on companies
+you have to trust.
+
+Enclave takes the opposite approach. Your vault never leaves your phone.
+Not even once.
+
+
+── WHAT YOU GET ─────────────────────────────
+
+  Instant access — unlock with fingerprint, face, or PIN in seconds
+
+  Clean organization — group passwords by category, search instantly
+
+  Safe editing — add titles, usernames, passwords, and private notes
+
+  Auto-lock — vault locks automatically when you step away
+
+  Backup & restore — export an encrypted backup file, restore anytime
+
+  No ads. No tracking. No account required.
+
+
+── FOR THE SECURITY-MINDED ──────────────────
+
+Every entry in your vault is individually encrypted with AES-256-GCM
+before it's saved to disk. Encryption keys are generated and stored
+inside Android Keystore — a hardware-backed secure element on your device.
+Those keys never leave the chip, not even during backup.
+
+The app requests no internet permission. It cannot phone home.
+FLAG_SECURE prevents your vault from appearing in screenshots
+or the app switcher.
+
+
+── YOUR DATA, YOUR RULES ────────────────────
+
+Forget your PIN? There is no recovery — by design. No backdoor,
+no "forgot password" email, no master key held by anyone else.
+Your vault is yours alone.
+
+Uninstall the app and every byte is gone. No residue on any server.
+No one to call. No account to delete.
+
+
+── ──────────────────────────────────────────
+
+Enclave is free. No premium tier. No upsell. Just a tool that does
+one thing well, and stays out of your way.

@@ -115,12 +115,12 @@ fun LockScreen(
             targetValue   = 0f,
             animationSpec = keyframes {
                 durationMillis = 450
-                 14f at  50
+                 14f at 50
                 -14f at 120
                  10f at 200
                 -10f at 270
-                  5f at 350
-                  0f at 450
+                 5f at 350
+                 0f at 450
             }
         )
     }
