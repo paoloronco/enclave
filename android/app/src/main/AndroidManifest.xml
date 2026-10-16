@@ -12,20 +12,43 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:theme="@style/Theme.Codevault"
         android:localeConfig="@xml/locales_config">
 
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:theme="@style/Theme.Codevault"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".provider.CodeVaultCredentialProviderService"
+            android:exported="true"
+            android:permission="android.permission.BIND_CREDENTIAL_PROVIDER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.credentials.CredentialProviderService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.credentials.provider"
+                android:resource="@xml/credential_provider" />
+        </service>
+
+        <activity
+            android:name=".provider.CredentialEntryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Codevault" />
+
+        <activity
+            android:name=".provider.CreateCredentialActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Codevault" />
+
     </application>
 
 </manifest>

@@ -31,21 +31,27 @@ import com.paoloronco.codevault.data.EntryType
 import com.paoloronco.codevault.ui.MainViewModel
 import com.paoloronco.codevault.ui.theme.*
 
+import kotlinx.coroutines.launch
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     viewModel:       MainViewModel,
     onAddClick:      (String) -> Unit,   // receives EntryType key
     onItemClick:     (Long) -> Unit,
+    onTrashClick:    () -> Unit,
     onSettingsClick: () -> Unit
 ) {
-    val context     = LocalContext.current
-    val accounts    by viewModel.accounts.collectAsStateWithLifecycle(emptyList())
-    val searchQuery by viewModel.searchQuery.collectAsStateWithLifecycle()
-    var deleteTarget by remember { mutableStateOf<AccountEntity?>(null) }
-    var showAddSheet by remember { mutableStateOf(false) }
+    val context        = LocalContext.current
+    val coroutineScope = rememberCoroutineScope()
+    val accounts       by viewModel.accounts.collectAsStateWithLifecycle(emptyList())
+    val searchQuery    by viewModel.searchQuery.collectAsStateWithLifecycle()
+    var deleteTarget   by remember { mutableStateOf<AccountEntity?>(null) }
+    var showAddSheet   by remember { mutableStateOf(false) }
+    val snackbarHostState = remember { SnackbarHostState() }
 
     Scaffold(
+        snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             TopAppBar(
                 title = {
@@ -56,6 +62,9 @@ fun HomeScreen(
                     )
                 },
                 actions = {
+                    IconButton(onClick = onTrashClick) {
+                        Icon(Icons.Default.DeleteOutline, stringResource(R.string.trash_title), tint = VaultOnSurface)
+                    }
                     IconButton(onClick = { viewModel.lock() }) {
                         Icon(Icons.Default.Lock, stringResource(R.string.home_lock_cd), tint = VaultOnSurface)
                     }
@@ -157,7 +166,20 @@ fun HomeScreen(
             text    = { Text(stringResource(R.string.home_delete_confirm, account.title)) },
             confirmButton = {
                 TextButton(
-                    onClick = { viewModel.deleteAccount(account); deleteTarget = null },
+                    onClick = {
+                        val target = account
+                        viewModel.deleteAccount(target)
+                        deleteTarget = null
+                        coroutineScope.launch {
+                            val result = snackbarHostState.showSnackbar(
+                                message = context.getString(R.string.home_moved_to_trash, target.title),
+                                actionLabel = context.getString(R.string.undo)
+                            )
+                            if (result == SnackbarResult.ActionPerformed) {
+                                viewModel.restoreAccount(target)
+                            }
+                        }
+                    },
                     colors  = ButtonDefaults.textButtonColors(contentColor = VaultError)
                 ) { Text(stringResource(R.string.delete)) }
             },

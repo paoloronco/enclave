@@ -50,7 +50,7 @@
     <string name="home_try_different_search">Prueba con un término diferente</string>
     <string name="home_empty_vault_hint">Pulsa + para añadir la primera entrada</string>
     <string name="home_delete_title">Eliminar entrada</string>
-    <string name="home_delete_confirm">¿Eliminar \"%s\"? Esta acción no se puede deshacer.</string>
+    <string name="home_delete_confirm">¿Estás seguro de que quieres eliminar \"%s\"?</string>
     <string name="home_lock_cd">Bloquear</string>
     <string name="home_settings_cd">Ajustes</string>
     <string name="home_add_cd">Añadir</string>
@@ -98,9 +98,9 @@
 
     <!-- Detail Screen -->
     <string name="detail_updated_at">Actualizado el %s</string>
-    <string name="detail_copied">%s copiado — se borrará en 30 segundos</string>
+    <string name="detail_copied">%s copiado al portapapeles</string>
     <string name="detail_delete_title">Eliminar cuenta</string>
-    <string name="detail_delete_confirm">¿Eliminar \"%s\"? Esta acción no se puede deshacer.</string>
+    <string name="detail_delete_confirm">¿Estás seguro de que quieres eliminar \"%s\"?</string>
     <string name="detail_show_hide_cd">Mostrar/ocultar</string>
     <string name="detail_field_notes">Notas</string>
     <string name="detail_field_password">Contraseña</string>

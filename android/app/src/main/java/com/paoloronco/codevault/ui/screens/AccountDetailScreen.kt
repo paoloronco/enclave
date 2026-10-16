@@ -43,19 +43,9 @@ fun AccountDetailScreen(
     var account by remember { mutableStateOf<AccountEntity?>(null) }
     var showDeleteDialog by remember { mutableStateOf(false) }
     var showPassword     by remember { mutableStateOf(false) }
-    var copiedLabel      by remember { mutableStateOf("") }
 
     LaunchedEffect(accountId) {
         account = viewModel.getAccountById(accountId)
-    }
-
-    // Snackbar for copy feedback
-    val snackbarHostState = remember { SnackbarHostState() }
-    LaunchedEffect(copiedLabel) {
-        if (copiedLabel.isNotEmpty()) {
-            snackbarHostState.showSnackbar(context.getString(R.string.detail_copied, copiedLabel))
-            copiedLabel = ""
-        }
     }
 
     val acc = account
@@ -67,7 +57,6 @@ fun AccountDetailScreen(
     }
 
     Scaffold(
-        snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             TopAppBar(
                 title = {
@@ -152,7 +141,6 @@ fun AccountDetailScreen(
                     icon     = Icons.Default.Person,
                     onCopy   = {
                         viewModel.copyToClipboard(context, "Username", acc.username)
-                        copiedLabel = "Username"
                     }
                 )
             }
@@ -164,7 +152,6 @@ fun AccountDetailScreen(
                 onToggle    = { showPassword = !showPassword },
                 onCopy      = {
                     viewModel.copyToClipboard(context, "Password", acc.password)
-                    copiedLabel = "Password"
                 }
             )
 
@@ -175,7 +162,6 @@ fun AccountDetailScreen(
                     icon   = Icons.AutoMirrored.Filled.Notes,
                     onCopy = {
                         viewModel.copyToClipboard(context, context.getString(R.string.detail_field_notes), acc.notes)
-                        copiedLabel = context.getString(R.string.detail_field_notes)
                     }
                 )
             }

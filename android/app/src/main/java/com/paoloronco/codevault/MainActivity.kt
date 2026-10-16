@@ -95,6 +95,7 @@ private fun CodeVaultApp(viewModel: MainViewModel) {
                             navController.navigate(Screen.AddEdit.forNew(type))
                         },
                         onItemClick     = { id -> navController.navigate(Screen.Detail.withId(id)) },
+                        onTrashClick    = { navController.navigate(Screen.Trash.route) },
                         onSettingsClick = { navController.navigate(Screen.Settings.route) }
                     )
                 }
@@ -127,10 +128,18 @@ private fun CodeVaultApp(viewModel: MainViewModel) {
                     )
                 }
 
-                composable(Screen.Settings.route) {
-                    SettingsScreen(
+                composable(Screen.Trash.route) {
+                    TrashScreen(
                         viewModel = viewModel,
                         onBack    = { navController.popBackStack() }
+                    )
+                }
+
+                composable(Screen.Settings.route) {
+                    SettingsScreen(
+                        viewModel    = viewModel,
+                        onTrashClick = { navController.navigate(Screen.Trash.route) },
+                        onBack       = { navController.popBackStack() }
                     )
                 }
             }

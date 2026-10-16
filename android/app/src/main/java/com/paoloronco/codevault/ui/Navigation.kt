@@ -11,5 +11,6 @@ sealed class Screen(val route: String) {
     object Detail   : Screen("detail/{id}") {
         fun withId(id: Long) = "detail/$id"
     }
+    object Trash    : Screen("trash")
     object Settings : Screen("settings")
 }

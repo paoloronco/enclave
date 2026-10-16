@@ -7,14 +7,14 @@ plugins {
 
 android {
     namespace = "com.paoloronco.codevault"
-    compileSdk = 36
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.paoloronco.codevault"
         minSdk = 28
-        targetSdk = 36
-        versionCode = 4
-        versionName = "1.1.1"
+        targetSdk = 35
+        versionCode = 8
+        versionName = "1.2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -25,9 +25,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -74,10 +75,14 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
+    implementation(libs.net.zetetic.sqlcipher)
+    implementation(libs.sqlite.ktx)
     
     // Security
     implementation(libs.androidx.biometric)
     implementation(libs.androidx.security.crypto)
+    implementation(libs.androidx.credentials.core)
+    implementation(libs.androidx.credentials.play.auth)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

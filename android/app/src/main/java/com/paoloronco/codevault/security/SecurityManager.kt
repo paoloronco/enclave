@@ -54,6 +54,7 @@ class SecurityManager(context: Context) {
         private const val KEY_PASSCODE_HASH   = "master_passcode_hash"
         private const val KEY_BIOMETRIC       = "biometric_enabled"
         private const val KEY_AUTO_LOCK       = "auto_lock_timeout_ms"
+        private const val KEY_TRASH_RETENTION = "trash_retention_days"
         private const val KEY_AUTH_TYPE       = "auth_type"   // "pin" | "password"
         private const val KEY_ONBOARDING      = "onboarding_complete"
         private const val KEY_DB_PASSPHRASE   = "db_passphrase_v1"
@@ -76,6 +77,22 @@ class SecurityManager(context: Context) {
             TIMEOUT_5M   to "5 minuti",
             TIMEOUT_10M  to "10 minuti",
             TIMEOUT_NEVER to "Mai"
+        )
+
+        const val RETENTION_7D    = 7
+        const val RETENTION_15D   = 15
+        const val RETENTION_30D   = 30
+        const val RETENTION_60D   = 60
+        const val RETENTION_90D   = 90
+        const val RETENTION_NEVER = -1
+
+        val RETENTION_OPTIONS = listOf(
+            RETENTION_7D,
+            RETENTION_15D,
+            RETENTION_30D,
+            RETENTION_60D,
+            RETENTION_90D,
+            RETENTION_NEVER
         )
     }
 
@@ -167,6 +184,13 @@ class SecurityManager(context: Context) {
         prefs.edit().putLong(KEY_AUTO_LOCK, ms).apply()
 
     fun getAutoLockTimeout(): Long = prefs.getLong(KEY_AUTO_LOCK, TIMEOUT_1M)
+
+    // ---- Trash retention ----
+
+    fun setTrashRetentionDays(days: Int) =
+        prefs.edit().putInt(KEY_TRASH_RETENTION, days).apply()
+
+    fun getTrashRetentionDays(): Int = prefs.getInt(KEY_TRASH_RETENTION, RETENTION_30D)
 
     // ---- Auth type ----
 

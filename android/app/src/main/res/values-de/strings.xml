@@ -50,7 +50,7 @@
     <string name="home_try_different_search">Versuch einen anderen Begriff</string>
     <string name="home_empty_vault_hint">Drücke + um den ersten Eintrag hinzuzufügen</string>
     <string name="home_delete_title">Eintrag löschen</string>
-    <string name="home_delete_confirm">Löschen von \"%s\"? Diese Aktion kann nicht rückgängig gemacht werden.</string>
+    <string name="home_delete_confirm">Möchtest du \"%s\" wirklich löschen?</string>
     <string name="home_lock_cd">Sperren</string>
     <string name="home_settings_cd">Einstellungen</string>
     <string name="home_add_cd">Hinzufügen</string>
@@ -98,9 +98,9 @@
 
     <!-- Detail Screen -->
     <string name="detail_updated_at">Aktualisiert am %s</string>
-    <string name="detail_copied">%s kopiert — wird in 30 Sekunden gelöscht</string>
+    <string name="detail_copied">%s in die Zwischenablage kopiert</string>
     <string name="detail_delete_title">Konto löschen</string>
-    <string name="detail_delete_confirm">Löschen von \"%s\"? Diese Aktion kann nicht rückgängig gemacht werden.</string>
+    <string name="detail_delete_confirm">Möchtest du \"%s\" wirklich löschen?</string>
     <string name="detail_show_hide_cd">Anzeigen/Verbergen</string>
     <string name="detail_field_notes">Notizen</string>
     <string name="detail_field_password">Passwort</string>
@@ -175,4 +175,35 @@
     <string name="timeout_5m">5 Minuten</string>
     <string name="timeout_10m">10 Minuten</string>
     <string name="timeout_never">Nie</string>
+
+    <!-- Papierkorb / Trash -->
+    <string name="trash_title">Papierkorb</string>
+    <string name="trash_subtitle">Kürzlich gelöschte Elemente wiederherstellen</string>
+    <string name="trash_empty">Der Papierkorb ist leer</string>
+    <string name="trash_empty_subtitle">Gelöschte Elemente werden entsprechend deinen Einstellungen im Papierkorb aufbewahrt.</string>
+    <string name="trash_days_left">noch %d Tage</string>
+    <string name="trash_days_left_one">noch 1 Tag</string>
+    <string name="trash_restore">Wiederherstellen</string>
+    <string name="trash_delete_forever">Endgültig löschen</string>
+    <string name="trash_empty_button">Papierkorb leeren</string>
+    <string name="trash_empty_confirm_title">Papierkorb leeren?</string>
+    <string name="trash_empty_confirm_message">Alle Elemente im Papierkorb werden endgültig gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.</string>
+    <string name="trash_delete_item_title">Endgültig löschen</string>
+    <string name="trash_delete_item_confirm">\"%s\" endgültig löschen? Diese Aktion kann nicht rückgängig gemacht werden.</string>
+    <string name="trash_banner_info_days">Elemente im Papierkorb werden nach %d Tagen endgültig gelöscht.</string>
+    <string name="trash_banner_info_never">Elemente im Papierkorb laufen nicht automatisch ab.</string>
+    <string name="trash_no_expiration">Kein Ablaufdatum</string>
+    <string name="trash_restored_snackbar">\"%s\" wiederhergestellt</string>
+    <string name="home_moved_to_trash">\"%s\" in den Papierkorb verschoben</string>
+    <string name="undo">Rückgängig</string>
+
+    <!-- Settings Trash Retention -->
+    <string name="settings_trash_retention_title">Papierkorb-Aufbewahrung</string>
+    <string name="settings_trash_retention_subtitle">Wähle, wie lange gelöschte Elemente aufbewahrt werden</string>
+    <string name="retention_7d">7 Tage</string>
+    <string name="retention_15d">15 Tage</string>
+    <string name="retention_30d">30 Tage</string>
+    <string name="retention_60d">60 Tage</string>
+    <string name="retention_90d">90 Tage</string>
+    <string name="retention_never">Nie</string>
 </resources>

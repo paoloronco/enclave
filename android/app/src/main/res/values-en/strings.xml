@@ -50,7 +50,7 @@
     <string name="home_try_different_search">Try a different term</string>
     <string name="home_empty_vault_hint">Press + to add the first entry</string>
     <string name="home_delete_title">Delete entry</string>
-    <string name="home_delete_confirm">Delete \"%s\"? This action cannot be undone.</string>
+    <string name="home_delete_confirm">Are you sure you want to delete \"%s\"?</string>
     <string name="home_lock_cd">Lock</string>
     <string name="home_settings_cd">Settings</string>
     <string name="home_add_cd">Add</string>
@@ -98,9 +98,9 @@
 
     <!-- Detail Screen -->
     <string name="detail_updated_at">Updated on %s</string>
-    <string name="detail_copied">%s copied — will be cleared in 30 seconds</string>
+    <string name="detail_copied">%s copied to clipboard</string>
     <string name="detail_delete_title">Delete account</string>
-    <string name="detail_delete_confirm">Delete \"%s\"? This action cannot be undone.</string>
+    <string name="detail_delete_confirm">Are you sure you want to delete \"%s\"?</string>
     <string name="detail_show_hide_cd">Show/hide</string>
     <string name="detail_field_notes">Notes</string>
     <string name="detail_field_password">Password</string>
@@ -175,4 +175,35 @@
     <string name="timeout_5m">5 minutes</string>
     <string name="timeout_10m">10 minutes</string>
     <string name="timeout_never">Never</string>
+
+    <!-- Trash -->
+    <string name="trash_title">Trash</string>
+    <string name="trash_subtitle">Recover recently deleted items</string>
+    <string name="trash_empty">Trash is empty</string>
+    <string name="trash_empty_subtitle">Deleted items will be kept in the trash according to your retention settings.</string>
+    <string name="trash_days_left">%d days left</string>
+    <string name="trash_days_left_one">1 day left</string>
+    <string name="trash_restore">Restore</string>
+    <string name="trash_delete_forever">Delete permanently</string>
+    <string name="trash_empty_button">Empty trash</string>
+    <string name="trash_empty_confirm_title">Empty trash?</string>
+    <string name="trash_empty_confirm_message">All items in the trash will be permanently deleted. This action cannot be undone.</string>
+    <string name="trash_delete_item_title">Delete permanently</string>
+    <string name="trash_delete_item_confirm">Permanently delete \"%s\"? This action cannot be undone.</string>
+    <string name="trash_banner_info_days">Items in the trash are permanently deleted after %d days.</string>
+    <string name="trash_banner_info_never">Items in the trash do not expire automatically.</string>
+    <string name="trash_no_expiration">No expiration</string>
+    <string name="trash_restored_snackbar">\"%s\" restored</string>
+    <string name="home_moved_to_trash">\"%s\" moved to trash</string>
+    <string name="undo">Undo</string>
+
+    <!-- Settings Trash Retention -->
+    <string name="settings_trash_retention_title">Trash retention</string>
+    <string name="settings_trash_retention_subtitle">Choose how long to keep deleted items</string>
+    <string name="retention_7d">7 days</string>
+    <string name="retention_15d">15 days</string>
+    <string name="retention_30d">30 days</string>
+    <string name="retention_60d">60 days</string>
+    <string name="retention_90d">90 days</string>
+    <string name="retention_never">Never</string>
 </resources>

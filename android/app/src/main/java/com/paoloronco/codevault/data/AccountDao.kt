@@ -6,23 +6,19 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface AccountDao {
 
-    @Query("SELECT * FROM accounts ORDER BY isFavorite DESC, title ASC")
+    @Query("SELECT * FROM accounts WHERE isDeleted = 0 ORDER BY isFavorite DESC, title ASC")
     fun getAllAccounts(): Flow<List<AccountEntity>>
 
-    @Query("""
-        SELECT * FROM accounts
-        WHERE title LIKE '%' || :q || '%'
-        ORDER BY isFavorite DESC, title ASC
-    """)
-    fun searchAccounts(q: String): Flow<List<AccountEntity>>
-
-    @Query("SELECT * FROM accounts WHERE isFavorite = 1 ORDER BY title ASC")
+    @Query("SELECT * FROM accounts WHERE isFavorite = 1 AND isDeleted = 0 ORDER BY title ASC")
     fun getFavorites(): Flow<List<AccountEntity>>
+
+    @Query("SELECT * FROM accounts WHERE isDeleted = 1 ORDER BY deletedAt DESC")
+    fun getTrashAccounts(): Flow<List<AccountEntity>>
 
     @Query("SELECT * FROM accounts WHERE id = :id")
     suspend fun getAccountById(id: Long): AccountEntity?
 
-    @Query("SELECT * FROM accounts ORDER BY title ASC")
+    @Query("SELECT * FROM accounts WHERE isDeleted = 0 ORDER BY title ASC")
     suspend fun getAllAccountsOnce(): List<AccountEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -39,4 +35,10 @@ interface AccountDao {
 
     @Query("DELETE FROM accounts")
     suspend fun deleteAll()
+
+    @Query("DELETE FROM accounts WHERE isDeleted = 1")
+    suspend fun emptyTrash()
+
+    @Query("DELETE FROM accounts WHERE isDeleted = 1 AND deletedAt IS NOT NULL AND deletedAt <= :threshold")
+    suspend fun deleteOlderThan(threshold: Long)
 }

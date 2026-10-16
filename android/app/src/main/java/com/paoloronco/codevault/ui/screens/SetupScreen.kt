@@ -1,5 +1,9 @@
 package com.paoloronco.codevault.ui.screens
 
+import android.content.Intent
+import android.os.Build
+import android.net.Uri
+import android.provider.Settings
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Animatable
@@ -132,20 +136,25 @@ fun SetupScreen(
                         fontWeight = FontWeight.SemiBold
                     )
                     Spacer(Modifier.height(24.dp))
-                    Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(16.dp)
+                    ) {
                         AuthTypeCard(
                             title    = "PIN",
                             subtitle = stringResource(R.string.setup_pin_type_subtitle),
                             emoji    = "🔢",
                             selected = authType == "pin",
-                            onClick  = { authType = "pin" }
+                            onClick  = { authType = "pin" },
+                            modifier = Modifier.weight(1f)
                         )
                         AuthTypeCard(
                             title    = "Password",
                             subtitle = stringResource(R.string.setup_password_type_subtitle),
                             emoji    = "🔡",
                             selected = authType == "password",
-                            onClick  = { authType = "password" }
+                            onClick  = { authType = "password" },
+                            modifier = Modifier.weight(1f)
                         )
                     }
                     Spacer(Modifier.height(32.dp))
@@ -285,7 +294,7 @@ fun SetupScreen(
                                     if (confirm.length == PIN_LENGTH) {
                                         if (confirm == passcode) {
                                             viewModel.setupPasscode(passcode, "pin")
-                                            onSetupComplete()
+                                            step = 3
                                         } else {
                                             errorMsg = context.getString(R.string.setup_pin_mismatch)
                                             shake()
@@ -320,7 +329,7 @@ fun SetupScreen(
                                     confirm = ""
                                 } else {
                                     viewModel.setupPasscode(passcode, "password")
-                                    onSetupComplete()
+                                    step = 3
                                 }
                             },
                             modifier = Modifier.fillMaxWidth().height(52.dp),
@@ -334,6 +343,52 @@ fun SetupScreen(
                         Text(stringResource(R.string.back), color = VaultOnSurface)
                     }
                 }
+
+                // ── Step 3: Enable Provider prompt ─────────────────────
+                3 -> Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text("🛡️", fontSize = 60.sp)
+                    Spacer(Modifier.height(16.dp))
+                    Text(
+                        stringResource(R.string.setup_provider_title),
+                        style      = MaterialTheme.typography.titleMedium,
+                        color      = MaterialTheme.colorScheme.onBackground,
+                        fontWeight = FontWeight.Bold,
+                        textAlign  = TextAlign.Center
+                    )
+                    Spacer(Modifier.height(8.dp))
+                    Text(
+                        stringResource(R.string.setup_provider_subtitle),
+                        style     = MaterialTheme.typography.bodyMedium,
+                        color     = VaultOnSurface,
+                        textAlign = TextAlign.Center
+                    )
+                    Spacer(Modifier.height(32.dp))
+                    Button(
+                        onClick = {
+                            val intent = if (Build.VERSION.SDK_INT >= 34) {
+                                Intent("android.settings.CREDENTIAL_PROVIDER")
+                            } else {
+                                Intent(Settings.ACTION_REQUEST_SET_AUTOFILL_SERVICE).apply {
+                                    data = Uri.parse("package:${context.packageName}")
+                                }
+                            }
+                            try {
+                                context.startActivity(intent)
+                            } catch (e: Exception) {
+                                try {
+                                    context.startActivity(Intent(Settings.ACTION_SETTINGS))
+                                } catch (e2: Exception) {}
+                            }
+                            onSetupComplete()
+                        },
+                        modifier = Modifier.fillMaxWidth().height(52.dp),
+                        shape    = RoundedCornerShape(14.dp)
+                    ) { Text(stringResource(R.string.setup_provider_enable), fontSize = 16.sp) }
+                    Spacer(Modifier.height(12.dp))
+                    TextButton(onClick = onSetupComplete) {
+                        Text(stringResource(R.string.setup_provider_skip), color = VaultOnSurface)
+                    }
+                }
             }
         }
     }
@@ -345,11 +400,12 @@ private fun AuthTypeCard(
     subtitle: String,
     emoji:    String,
     selected: Boolean,
-    onClick:  () -> Unit
+    onClick:  () -> Unit,
+    modifier: Modifier = Modifier
 ) {
     Card(
         onClick   = onClick,
-        modifier  = Modifier.width(140.dp),
+        modifier  = modifier.height(150.dp),
         shape     = RoundedCornerShape(18.dp),
         border    = BorderStroke(
             width = if (selected) 2.dp else 1.dp,
@@ -364,17 +420,21 @@ private fun AuthTypeCard(
         )
     ) {
         Column(
-            modifier            = Modifier.padding(vertical = 20.dp, horizontal = 12.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            modifier            = Modifier
+                .fillMaxSize()
+                .padding(vertical = 16.dp, horizontal = 12.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-            Text(emoji, fontSize = 28.sp)
+            Text(emoji, fontSize = 32.sp)
             Spacer(Modifier.height(8.dp))
             Text(
                 title,
-                style      = MaterialTheme.typography.titleSmall,
+                style      = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color      = if (selected) MaterialTheme.colorScheme.primary
-                             else          MaterialTheme.colorScheme.onSurface
+                             else          MaterialTheme.colorScheme.onSurface,
+                textAlign  = TextAlign.Center
             )
             Spacer(Modifier.height(4.dp))
             Text(

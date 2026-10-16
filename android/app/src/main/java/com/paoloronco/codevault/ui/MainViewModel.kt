@@ -46,8 +46,23 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val accounts = _searchQuery.flatMapLatest { q ->
-        if (q.isBlank()) dao.getAllAccounts() else dao.searchAccounts(q)
-    }.map { list -> list.map { it.decrypted() } }
+        dao.getAllAccounts().map { list ->
+            val decryptedList = list.map { it.decrypted() }
+            if (q.isBlank()) {
+                decryptedList
+            } else {
+                decryptedList.filter {
+                    it.title.contains(q, ignoreCase = true) ||
+                    it.username.contains(q, ignoreCase = true)
+                }
+            }
+        }
+    }
+
+    // ---- Trash ----
+    val trashAccounts = dao.getTrashAccounts().map { list ->
+        list.map { it.decrypted() }
+    }
 
     // ---- Backup feedback ----
     private val _backupResult = MutableStateFlow<BackupResult>(BackupResult.Idle)
@@ -58,6 +73,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     init {
         if (securityManager.isPasscodeSet()) startAutoLockTimer()
+        purgeOldTrash()
     }
 
     // ---- Auth ----
@@ -116,8 +132,41 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun updateAccount(account: AccountEntity) =
         viewModelScope.launch { dao.updateAccount(account.encrypted()) }
 
-    fun deleteAccount(account: AccountEntity) =
+    fun deleteAccount(account: AccountEntity) = moveToTrash(account)
+
+    fun moveToTrash(account: AccountEntity) =
+        viewModelScope.launch {
+            val updated = account.copy(isDeleted = true, deletedAt = System.currentTimeMillis())
+            dao.updateAccount(updated.encrypted())
+        }
+
+    fun restoreAccount(account: AccountEntity) =
+        viewModelScope.launch {
+            val updated = account.copy(isDeleted = false, deletedAt = null)
+            dao.updateAccount(updated.encrypted())
+        }
+
+    fun deletePermanently(account: AccountEntity) =
         viewModelScope.launch { dao.deleteAccount(account) }
+
+    fun emptyTrash() =
+        viewModelScope.launch { dao.emptyTrash() }
+
+    fun getTrashRetentionDays(): Int = securityManager.getTrashRetentionDays()
+
+    fun setTrashRetentionDays(days: Int) {
+        securityManager.setTrashRetentionDays(days)
+        purgeOldTrash()
+    }
+
+    fun purgeOldTrash() =
+        viewModelScope.launch {
+            val retentionDays = securityManager.getTrashRetentionDays()
+            if (retentionDays > 0) {
+                val threshold = System.currentTimeMillis() - retentionDays.toLong() * 24 * 60 * 60 * 1000L
+                dao.deleteOlderThan(threshold)
+            }
+        }
 
     suspend fun getAccountById(id: Long): AccountEntity? =
         dao.getAccountById(id)?.decrypted()
@@ -150,6 +199,17 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
         mgr.setPrimaryClip(clip)
+
+        // Show native Toast on Android 12 and below (API < 33).
+        // On Android 13+ (API >= 33), Android OS shows its native clipboard pop-up automatically.
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.TIRAMISU) {
+            android.widget.Toast.makeText(
+                context,
+                context.getString(R.string.detail_copied, label),
+                android.widget.Toast.LENGTH_SHORT
+            ).show()
+        }
+
         // Auto-clear after 30 s
         viewModelScope.launch {
             delay(30_000L)

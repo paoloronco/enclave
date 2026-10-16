@@ -39,7 +39,9 @@ data class AccountEntity(
     val notes:      String  = "",
     val category:   String  = "General",
     val isFavorite: Boolean = false,
-    val updatedAt:  Long    = System.currentTimeMillis()
+    val updatedAt:  Long    = System.currentTimeMillis(),
+    val isDeleted:  Boolean = false,
+    val deletedAt:  Long?   = null
 )
 
 object Categories {

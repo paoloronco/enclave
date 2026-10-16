@@ -6,8 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.paoloronco.codevault.security.SecurityManager
+import net.sqlcipher.database.SupportFactory
 
-@Database(entities = [AccountEntity::class], version = 3, exportSchema = false)
+@Database(entities = [AccountEntity::class], version = 4, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun accountDao(): AccountDao
 
@@ -30,14 +32,33 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        private val MIGRATION_3_4 = object : Migration(3, 4) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL(
+                    "ALTER TABLE accounts ADD COLUMN isDeleted INTEGER NOT NULL DEFAULT 0"
+                )
+                database.execSQL(
+                    "ALTER TABLE accounts ADD COLUMN deletedAt INTEGER DEFAULT NULL"
+                )
+            }
+        }
+
         fun getDatabase(context: Context): AppDatabase {
             return INSTANCE ?: synchronized(this) {
+                // Initialize SQLCipher libraries
+                net.sqlcipher.database.SQLiteDatabase.loadLibs(context)
+
+                val securityManager = SecurityManager(context)
+                val passphrase = securityManager.getOrCreateDbPassphrase()
+                val factory = SupportFactory(passphrase)
+
                 Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "codevault_secure.db"
+                    "codevault_v4.db"
                 )
-                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
+                    .openHelperFactory(factory)
+                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
                     .fallbackToDestructiveMigration()
                     .build()
                     .also { INSTANCE = it }

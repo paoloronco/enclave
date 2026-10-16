@@ -54,24 +54,6 @@ private data class LangEntry(
 
 private val LANGUAGES = listOf(
     LangEntry(
-        code        = "it",
-        flag        = "🇮🇹",
-        selfName    = "Italiano",
-        welcomeWord = "Benvenuto",
-        preposition = "in",
-        tagline     = "Il gestore di password sicuro,\nprivato e 100% offline",
-        f1Title     = "Sicurezza AES-256",
-        f1Sub       = "Tutti i dati cifrati con AES-256-GCM e Android Keystore",
-        f2Sub       = "Nessun dato inviato in rete, mai",
-        f3Title     = "Accesso biometrico",
-        f3Sub       = "Sblocca con impronta digitale o PIN",
-        f4Title     = "Tutto organizzato",
-        f4Sub       = "Password, PIN, note WiFi e molto altro",
-        selectWord   = "Seleziona lingua",
-        selectSubtitle = "Scegli la tua lingua preferita",
-        continueWord = "Continua"
-    ),
-    LangEntry(
         code        = "en",
         flag        = "🇬🇧",
         selfName    = "English",
@@ -88,6 +70,24 @@ private val LANGUAGES = listOf(
         selectWord   = "Select language",
         selectSubtitle = "Choose your preferred language",
         continueWord = "Continue"
+    ),
+    LangEntry(
+        code        = "it",
+        flag        = "🇮🇹",
+        selfName    = "Italiano",
+        welcomeWord = "Benvenuto",
+        preposition = "in",
+        tagline     = "Il gestore di password sicuro,\nprivato e 100% offline",
+        f1Title     = "Sicurezza AES-256",
+        f1Sub       = "Tutti i dati cifrati con AES-256-GCM e Android Keystore",
+        f2Sub       = "Nessun dato inviato in rete, mai",
+        f3Title     = "Accesso biometrico",
+        f3Sub       = "Sblocca con impronta digitale o PIN",
+        f4Title     = "Tutto organizzato",
+        f4Sub       = "Password, PIN, note WiFi e molto altro",
+        selectWord   = "Seleziona lingua",
+        selectSubtitle = "Scegli la tua lingua preferita",
+        continueWord = "Continua"
     ),
     LangEntry(
         code        = "de",

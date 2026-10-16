@@ -1,5 +1,9 @@
 package com.paoloronco.codevault.ui.screens
 
+import android.content.Intent
+import android.os.Build
+import android.net.Uri
+import android.provider.Settings
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatDelegate
@@ -44,8 +48,9 @@ import java.util.Locale
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 fun SettingsScreen(
-    viewModel: MainViewModel,
-    onBack:    () -> Unit
+    viewModel:    MainViewModel,
+    onTrashClick: () -> Unit,
+    onBack:       () -> Unit
 ) {
     val context = LocalContext.current
     val backupResult by viewModel.backupResult.collectAsStateWithLifecycle()
@@ -59,6 +64,9 @@ fun SettingsScreen(
     }
     var autoLockTimeout by remember {
         mutableStateOf(viewModel.securityManager.getAutoLockTimeout())
+    }
+    var trashRetentionDays by remember {
+        mutableStateOf(viewModel.getTrashRetentionDays())
     }
 
     // Dialogs
@@ -217,6 +225,73 @@ fun SettingsScreen(
                 title    = stringResource(R.string.settings_import_title),
                 subtitle = stringResource(R.string.settings_import_subtitle),
                 onClick  = { importLauncher.launch(arrayOf("application/octet-stream", "*/*")) }
+            )
+
+            // ---- Cestino / Trash ----
+            SettingsItem(
+                icon     = Icons.Default.DeleteOutline,
+                title    = stringResource(R.string.trash_title),
+                subtitle = stringResource(R.string.trash_subtitle),
+                onClick  = onTrashClick
+            )
+
+            Spacer(Modifier.height(4.dp))
+            Text(
+                stringResource(R.string.settings_trash_retention_subtitle),
+                style = MaterialTheme.typography.bodySmall,
+                color = VaultOnSurface,
+                modifier = Modifier.padding(horizontal = 4.dp)
+            )
+            Spacer(Modifier.height(4.dp))
+
+            FlowRow(
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                SecurityManager.RETENTION_OPTIONS.forEach { days ->
+                    val selected = trashRetentionDays == days
+                    FilterChip(
+                        selected = selected,
+                        onClick  = {
+                            trashRetentionDays = days
+                            viewModel.setTrashRetentionDays(days)
+                        },
+                        label    = { Text(retentionLabel(days)) },
+                        leadingIcon = if (selected) ({
+                            Icon(Icons.Default.Check, null,
+                                 modifier = Modifier.size(16.dp))
+                        }) else null
+                    )
+                }
+            }
+
+            HorizontalDivider(
+                modifier = Modifier.padding(vertical = 8.dp),
+                color    = MaterialTheme.colorScheme.outline.copy(alpha = 0.4f)
+            )
+
+            // ---- Password Manager ----
+            SettingsSection(stringResource(R.string.settings_provider_section), Icons.Default.VpnKey)
+            SettingsItem(
+                icon     = Icons.Default.AppRegistration,
+                title    = stringResource(R.string.settings_provider_title),
+                subtitle = stringResource(R.string.settings_provider_subtitle),
+                onClick  = {
+                    val intent = if (android.os.Build.VERSION.SDK_INT >= 34) {
+                        Intent("android.settings.CREDENTIAL_PROVIDER")
+                    } else {
+                        Intent(android.provider.Settings.ACTION_REQUEST_SET_AUTOFILL_SERVICE).apply {
+                            data = android.net.Uri.parse("package:${context.packageName}")
+                        }
+                    }
+                    try {
+                        context.startActivity(intent)
+                    } catch (e: Exception) {
+                        // Fallback in case the specific settings page is not available
+                        try {
+                            context.startActivity(Intent(android.provider.Settings.ACTION_SETTINGS))
+                        } catch (e2: Exception) {}
+                    }
+                }
             )
 
             HorizontalDivider(
@@ -555,13 +630,26 @@ private fun timeoutLabel(ms: Long): String = when (ms) {
     else                           -> "$ms ms"
 }
 
+// ── Retention label helper ───────────────────────────────────────────────────
+
+@Composable
+private fun retentionLabel(days: Int): String = when (days) {
+    SecurityManager.RETENTION_7D    -> stringResource(R.string.retention_7d)
+    SecurityManager.RETENTION_15D   -> stringResource(R.string.retention_15d)
+    SecurityManager.RETENTION_30D   -> stringResource(R.string.retention_30d)
+    SecurityManager.RETENTION_60D   -> stringResource(R.string.retention_60d)
+    SecurityManager.RETENTION_90D   -> stringResource(R.string.retention_90d)
+    SecurityManager.RETENTION_NEVER -> stringResource(R.string.retention_never)
+    else                            -> "$days"
+}
+
 // ── Language selector ────────────────────────────────────────────────────────
 
 private data class LangOption(val tag: String, val label: String, val flag: String)
 
 private val LANGUAGES = listOf(
-    LangOption("it", "Italiano", "🇮🇹"),
     LangOption("en", "English",  "🇬🇧"),
+    LangOption("it", "Italiano", "🇮🇹"),
     LangOption("de", "Deutsch",  "🇩🇪"),
     LangOption("es", "Español",  "🇪🇸"),
 )

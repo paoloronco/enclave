@@ -3,13 +3,14 @@
 <p align="center">
   <img src="docs/assets/banner.png" alt="Enclave banner" width="600"/>
 </p>
-
 <p align="center">
   <a href="https://play.google.com/store/apps/details?id=com.paoloronco.codevault">
     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
          alt="Get it on Google Play" height="70"/>
   </a>
 </p>
+
+![Version](https://img.shields.io/badge/version-1.1.0-blue)
 
 A fully offline, secure password and secrets manager for Android. No cloud, no sync, no accounts — your data never leaves your device.
 
