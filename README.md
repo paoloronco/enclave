@@ -10,7 +10,7 @@
   </a>
 </p>
 
-![Version](https://img.shields.io/badge/version-1.1.0-blue)
+![Version](https://img.shields.io/badge/version-1.2.0-blue)
 
 A fully offline, secure password and secrets manager for Android. No cloud, no sync, no accounts — your data never leaves your device.
 
