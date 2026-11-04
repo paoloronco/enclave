@@ -7,20 +7,26 @@ plugins {
 
 android {
     namespace = "com.paoloronco.codevault"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.paoloronco.codevault"
         minSdk = 28
-        targetSdk = 35
-        versionCode = 8
+        targetSdk = 36
+        versionCode = 12
         versionName = "1.2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
+        ndk {
+            abiFilters.clear()
+            abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
+        }
     }
+    
+    ndkVersion = "27.0.12077973"
 
     buildTypes {
         release {
@@ -43,13 +49,14 @@ android {
         compose = true
         buildConfig = true
     }
+    
     packaging {
         resources {
             excludes.add("/META-INF/{AL2.0,LGPL2.1}")
             excludes.add("META-INF/versions/9/OSGI-INF/MANIFEST.MF")
         }
         jniLibs {
-            useLegacyPackaging = false
+            useLegacyPackaging = true
         }
     }
 }

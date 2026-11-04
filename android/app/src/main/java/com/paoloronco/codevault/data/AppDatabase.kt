@@ -17,27 +17,27 @@ abstract class AppDatabase : RoomDatabase() {
         @Volatile private var INSTANCE: AppDatabase? = null
 
         private val MIGRATION_1_2 = object : Migration(1, 2) {
-            override fun migrate(database: SupportSQLiteDatabase) {
-                database.execSQL(
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
                     "ALTER TABLE accounts ADD COLUMN isFavorite INTEGER NOT NULL DEFAULT 0"
                 )
             }
         }
 
         private val MIGRATION_2_3 = object : Migration(2, 3) {
-            override fun migrate(database: SupportSQLiteDatabase) {
-                database.execSQL(
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
                     "ALTER TABLE accounts ADD COLUMN type TEXT NOT NULL DEFAULT 'account'"
                 )
             }
         }
 
         private val MIGRATION_3_4 = object : Migration(3, 4) {
-            override fun migrate(database: SupportSQLiteDatabase) {
-                database.execSQL(
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
                     "ALTER TABLE accounts ADD COLUMN isDeleted INTEGER NOT NULL DEFAULT 0"
                 )
-                database.execSQL(
+                db.execSQL(
                     "ALTER TABLE accounts ADD COLUMN deletedAt INTEGER DEFAULT NULL"
                 )
             }
@@ -59,7 +59,7 @@ abstract class AppDatabase : RoomDatabase() {
                 )
                     .openHelperFactory(factory)
                     .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
-                    .fallbackToDestructiveMigration()
+                    .fallbackToDestructiveMigration(true)
                     .build()
                     .also { INSTANCE = it }
             }
