@@ -1,0 +1,252 @@
+{
+  "repo_notes": [
+    {
+      "content": "Document the current main-branch implementation, not assumptions from the README. Source files take precedence over project descriptions. Distinguish implemented, partial, legacy and planned features. Cite exact source paths and symbols. Pay special attention to cryptographic key lifecycles, SQLCipher migration safety, Android credential provider capabilities, backup compatibility and security limitations. Never describe a security mechanism as independently audited without evidence. Use concise technical English, Mermaid diagrams where useful, and cross-links between related pages."
+    }
+  ],
+  "pages": [
+    {
+      "title": "Overview",
+      "purpose": "Architecture, supported features, offline design, data flows, security boundaries and navigation.",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Getting Started & Build Setup",
+      "purpose": "Gradle wrapper, Android SDK, Kotlin, KSP, dependencies, build variants and reproducible build steps.",
+      "parent": "Overview",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Android Manifest & Application Lifecycle",
+      "purpose": "Manifest permissions, exported components, MainActivity, FLAG_SECURE, backup restrictions and lifecycle handling.",
+      "parent": "Overview",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Data Layer",
+      "purpose": "Room, SQLCipher, entities, DAO, persistence boundaries and migration strategy.",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "AppDatabase & SQLCipher Migrations",
+      "purpose": "Version 4, codevault_v4.db, SupportFactory, Keystore-protected passphrase, migrations 1→4 and fallbackToDestructiveMigration risks.",
+      "parent": "Data Layer",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "AccountEntity & AccountDao",
+      "purpose": "EntryType, encrypted fields, favorites, categories, soft deletion, timestamps, Flow queries and CRUD.",
+      "parent": "Data Layer",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Security Architecture",
+      "purpose": "Cryptographic design, authentication, key management, local storage, backups and security boundaries.",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Threat Model & Security Limitations",
+      "purpose": "Assets, attackers, device compromise, root, memory exposure, clipboard, screenshots, offline guessing, metadata leakage and residual risks.",
+      "parent": "Security Architecture",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "SecurityManager & Key Lifecycle",
+      "purpose": "PBKDF2 passcode verification, salts, Keystore aliases, SQLCipher passphrase storage, field encryption, encrypted preferences and key invalidation.",
+      "parent": "Security Architecture",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Authentication & Session Management",
+      "purpose": "Setup, PIN/password unlock, biometric prompts, retry limits, lockout, auto-lock, background handling and root detection where implemented.",
+      "parent": "Security Architecture",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Backup & Restore",
+      "purpose": "Actual .evault and .cvbak support, format versions, encryption, KDF, SAF, validation, wrong-password handling and restore safety.",
+      "parent": "Security Architecture",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "UI Layer",
+      "purpose": "Jetpack Compose, Material 3, navigation, state management and screen architecture.",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "MainViewModel & Navigation",
+      "purpose": "StateFlow, auth state, CRUD, backup state, clipboard, routes and navigation events.",
+      "parent": "UI Layer",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Vault Screens & Entry Management",
+      "purpose": "Onboarding, lock, home, search, add/edit, generator, detail, favorites and entry-type-specific fields.",
+      "parent": "UI Layer",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Trash & Data Retention",
+      "purpose": "Soft delete, Trash UI, restoration, permanent deletion, retention settings and cleanup behavior.",
+      "parent": "UI Layer",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Settings & Preferences",
+      "purpose": "Auto-lock, biometrics, backup, language, trash retention, credential provider setup and danger-zone actions.",
+      "parent": "UI Layer",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Theming, Resources & Localization",
+      "purpose": "Material 3 themes, typography, icons, assets, en/it/de/es strings and runtime locale switching.",
+      "parent": "UI Layer",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Credential Provider Integration",
+      "purpose": "Android Credential Manager architecture, supported API levels, password autofill, save requests and actual passkey support.",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Credential Provider Service",
+      "purpose": "CodeVaultCredentialProviderService, manifest binding, XML metadata, request routing, filtering and security checks.",
+      "parent": "Credential Provider Integration",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Credential Entry & Creation Activities",
+      "purpose": "CredentialEntryActivity, CreateCredentialActivity, authentication gates, result handling and non-exported activities.",
+      "parent": "Credential Provider Integration",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Release, Quality & Project Docs",
+      "purpose": "Build distribution, test strategy, store metadata, privacy policy and licensing.",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Release Build, R8 & Signing",
+      "purpose": "Release Gradle configuration, R8, ProGuard, resource shrinking, baseline profiles, signing and packaging.",
+      "parent": "Release, Quality & Project Docs",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Testing & Security Validation",
+      "purpose": "Unit/instrumented tests, encryption tests, migration tests, backup round trips, authentication and provider integration coverage.",
+      "parent": "Release, Quality & Project Docs",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Play Store, Privacy Policy & License",
+      "purpose": "Store listing, app version, privacy claims, permissions, assets, AGPL-3.0 and repository documentation.",
+      "parent": "Release, Quality & Project Docs",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    },
+    {
+      "title": "Glossary",
+      "purpose": "Source-linked definitions of Enclave terms including SQLCipher, SupportFactory, Keystore, PBKDF2, AES-GCM, SAF, Credential Manager, KSP and backup formats.",
+      "page_notes": [
+        {
+          "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        }
+      ]
+    }
+  ]
+}
