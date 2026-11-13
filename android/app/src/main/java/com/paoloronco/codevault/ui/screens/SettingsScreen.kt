@@ -323,6 +323,29 @@ fun SettingsScreen(
                     InfoRow(stringResource(R.string.settings_cloud_sync), stringResource(R.string.settings_cloud_sync_value))
                 }
             }
+            Spacer(Modifier.height(8.dp))
+            SettingsItem(
+                icon     = Icons.Default.Star,
+                title    = stringResource(R.string.settings_rate_play_store),
+                subtitle = stringResource(R.string.settings_rate_play_store_subtitle),
+                onClick  = {
+                    val packageName = context.packageName
+                    try {
+                        context.startActivity(
+                            Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$packageName"))
+                        )
+                    } catch (e: Exception) {
+                        try {
+                            context.startActivity(
+                                Intent(
+                                    Intent.ACTION_VIEW,
+                                    Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
+                                )
+                            )
+                        } catch (e2: Exception) {}
+                    }
+                }
+            )
 
             HorizontalDivider(
                 modifier = Modifier.padding(vertical = 8.dp),

@@ -142,6 +142,8 @@
     <string name="settings_credentials_encryption">Cifratura credenziali</string>
     <string name="settings_cloud_sync">Cloud sync</string>
     <string name="settings_cloud_sync_value">Nessuno — 100% offline</string>
+    <string name="settings_rate_play_store">Valuta su Play Store</string>
+    <string name="settings_rate_play_store_subtitle">Lascia una recensione e supporta lo sviluppo</string>
     <string name="settings_change_auth_title">Cambia %s</string>
     <string name="settings_field_current">Attuale</string>
     <string name="settings_field_new">Nuovo</string>
