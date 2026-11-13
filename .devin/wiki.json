@@ -11,6 +11,9 @@
       "page_notes": [
         {
           "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        },
+        {
+          "content": "Include a prominent download link to the Google Play Store listing: https://play.google.com/store/apps/details?id=com.paoloronco.codevault (badge already present in README.md lines 6-11)."
         }
       ]
     },
@@ -236,6 +239,9 @@
       "page_notes": [
         {
           "content": "Document only behavior verified in the current source. Cite relevant files and explain security-sensitive edge cases."
+        },
+        {
+          "content": "Document the public Google Play Store listing URL https://play.google.com/store/apps/details?id=com.paoloronco.codevault as the official download link for the app (badge already present in README.md lines 6-11)."
         }
       ]
     },
